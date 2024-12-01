@@ -21,7 +21,7 @@ COPY . .
 EXPOSE 3000
 
 # Set environment variable for the port
-ENV PORT 3000
+# ENV PORT 3000
 
 # Set the default command to run the application
 # If your entry point is a file inside the src folder, use the correct path.
