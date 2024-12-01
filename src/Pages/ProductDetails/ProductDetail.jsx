@@ -43,7 +43,7 @@ function ProductDetail() {
                   alignItems: "center",
                   justifyContent: "center",
                   padding : "10%", }} >
-                  <ProductCard prod={Product} flex={true} rederdec={true}/>
+                  <ProductCard prod={Product} flex={true} rederdec={true} addbutton={true}/>
               </div>)}
       </Layout>
       

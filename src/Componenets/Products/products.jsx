@@ -23,7 +23,7 @@ function Products() {
          { 
             products.map((singleproduct, index) => 
                 {
-                    return <ProductCard prod={singleproduct} key={singleproduct.id}/>;
+                    return <ProductCard prod={singleproduct} key={singleproduct.id} addbutton={true}/>;
             
                })
          }

@@ -5,7 +5,8 @@
     margin-top: -10%;
     display: grid;
     gap: 50px;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    max-width: 1600px;
     place-items:center;
 }
 .category{

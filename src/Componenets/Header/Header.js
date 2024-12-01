@@ -1,15 +1,24 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { FiMapPin } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { IoCartOutline } from "react-icons/io5";
+
 import LowerHeader from './LowerHeader'
-import {Link} from 'react-router-dom'
+import {Link, useNavigation, useLocation} from 'react-router-dom'
+import {DataContext} from '../DataProvider/DataProvider'
 
 import classes from './Header.module.css'
+import {auth} from '../../utilities/firebase'
  
 function Header() {
+  const [{user,basket}, dispatch]=useContext(DataContext)
+  const totalized= basket?.reduce((amount,item)=>
+  {
+    return item.amount + amount
+  },0)
+  
   return (
-    <>
+    <section className={classes.fixed}>
       <section>
       <div class={classes.header_container}>
             {/* first column of the head part */}
@@ -24,8 +33,8 @@ function Header() {
                 </span>
                 </div>
                 <div>
-                    <p>Delivered to</p>
-                    <p>Ethiopia</p>
+                    <p className={classes.p}>Delivered to</p>
+                    <p className={classes.p}> Ethiopia</p>
                  </div> 
                 </div>
             </div> 
@@ -47,21 +56,31 @@ function Header() {
                     </select>
 
                 </div>
+              
                 
-                <Link to='/order'>
-                    
-                        <p> Sign In</p>
-                        <span>
+                <Link to={ !user && '/auth'}>
+                <div>
+                {
+                   user? 
+                   ( <>
+                   <p className={classes.p}> hello {user?.email?.split('@')[0]} , <span  onClick={()=>auth.signOut()} style={{fontSize:'14px'}}> Sign Out</span></p></>)
+                    :
+                   
+                   (<>  <p className={classes.p}> hello, Sign In</p>
+                   </>)
+                 } 
+                
+                        <span style={{paddingLeft:'8px'}}>
                             Account& Lists
                             <select class= {classes.ordersbg}></select>
                         </span>
-                    
+                </div>    
                 </Link>
                 
                 
                 {/* order */}
-                <Link to='/signup'>
-                      <p> Returns</p>
+                <Link to='/order'>
+                      <p className={classes.p}> Returns</p>
                         <span> & Order </span>  
                 </Link>
                 
@@ -70,7 +89,7 @@ function Header() {
                   
                     <Link to="/cart" class= {classes.cart} > 
                         <IoCartOutline size="25"/>
-                        <span> 0</span>
+                        <span> {totalized}</span>
                     </Link>
                     
             
@@ -78,7 +97,7 @@ function Header() {
         </div>
         <LowerHeader />
       </section>
-    </>
+    </section >
   )
 }
 

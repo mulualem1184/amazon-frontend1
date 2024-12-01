@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {reducer, initialize} from './utilities/reducer'
+import {DataProvider} from './Componenets/DataProvider/DataProvider'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- 
-    <App />
+<React.StrictMode>
+
+    
+    <DataProvider reducer={reducer} initialState={initialize}>
+        <App /> 
+      {/* {console.log(initialize.basket)}; */}
+    </DataProvider>
+</React.StrictMode>
 
 );
 
