@@ -20,7 +20,7 @@ function Auth() {
   const [{user}, dispatch]=useContext(DataContext)
   const navigate=useNavigate()
   const navStateData=useLocation()
-  console.log(navStateData.state.msg)
+  console.log(navStateData?.state?.msg)
   const authHandler=async(e)=>
   {
 
@@ -37,7 +37,7 @@ function Auth() {
       user:userInfo.user,
      })
      
-     navigate(navStateData.state.redirect || "/")
+     navigate(navStateData?.state?.redirect || "/")
      
      setLoading({...loading, signIn:false})
      //console.log(loading.signIn)
@@ -59,7 +59,7 @@ function Auth() {
         type:Type.SET_USER,
         user:userInfo.user,
        })
-       navigate(navStateData.state.redirect || "/")
+       navigate(navStateData?.state?.redirect || "/")
     setLoading({...loading, singUp:false})
     }
   ).catch((err)=>{
