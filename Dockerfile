@@ -18,7 +18,7 @@ COPY . ./
 
 # Expose the port your application listens on
 EXPOSE 3000
-
+ENV PORT 3000
 
 # Set the default command to run the application
 CMD ["node", "index.js"]
