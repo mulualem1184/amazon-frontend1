@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/amazon-frontend/static/css/main.e04b68a6.css",
+    "main.js": "/amazon-frontend/static/js/main.4a526745.js",
+    "static/js/453.e7ab70c3.chunk.js": "/amazon-frontend/static/js/453.e7ab70c3.chunk.js",
+    "static/media/crousel3.jpg": "/amazon-frontend/static/media/crousel3.2f5cc63b7e4512dd2789.jpg",
+    "static/media/crousel2.jpg": "/amazon-frontend/static/media/crousel2.ab0afea38695cebd23de.jpg",
+    "static/media/crousel1.jpg": "/amazon-frontend/static/media/crousel1.156cdd31675552944b28.jpg",
+    "static/media/crousel5.jpg": "/amazon-frontend/static/media/crousel5.805821d23a3f63566f17.jpg",
+    "static/media/crousel4.jpg": "/amazon-frontend/static/media/crousel4.225aaef918f59e5de14a.jpg",
+    "index.html": "/amazon-frontend/index.html",
+    "main.e04b68a6.css.map": "/amazon-frontend/static/css/main.e04b68a6.css.map",
+    "main.4a526745.js.map": "/amazon-frontend/static/js/main.4a526745.js.map",
+    "453.e7ab70c3.chunk.js.map": "/amazon-frontend/static/js/453.e7ab70c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e04b68a6.css",
+    "static/js/main.4a526745.js"
+  ]
+}
