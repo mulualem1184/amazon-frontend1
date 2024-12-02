@@ -44,7 +44,7 @@ function Header() {
                     <option value="">All</option>
                 </select>
                 <input type="text" name="" id="" placeholder="" />
-                <BsSearch size="25" />
+                <BsSearch size="39" />
 
             </div>
             {/* third column of the head part */}
